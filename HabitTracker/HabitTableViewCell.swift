@@ -20,10 +20,4 @@ class HabitTableViewCell: UITableViewCell {
     class func ReuseIdentifier() -> String {
         return "HabitCell"
     }
-    
-    // MARK: Lifecycle
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }

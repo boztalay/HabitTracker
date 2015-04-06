@@ -52,6 +52,14 @@
 		FB8212851AD232790056FC16 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212831AD232790056FC16 /* HabitsViewController.swift */; };
 		FB8212881AD233070056FC16 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212871AD233070056FC16 /* HabitTableViewCell.swift */; };
 		FB8212891AD233070056FC16 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212871AD233070056FC16 /* HabitTableViewCell.swift */; };
+		FB82128C1AD2EE850056FC16 /* HabitOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82128B1AD2EE850056FC16 /* HabitOverviewViewController.swift */; };
+		FB82128D1AD2EE850056FC16 /* HabitOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82128B1AD2EE850056FC16 /* HabitOverviewViewController.swift */; };
+		FB82128F1AD2EE980056FC16 /* HabitEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82128E1AD2EE980056FC16 /* HabitEventTableViewCell.swift */; };
+		FB8212901AD2EE980056FC16 /* HabitEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82128E1AD2EE980056FC16 /* HabitEventTableViewCell.swift */; };
+		FB8212981AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212971AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift */; };
+		FB8212991AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212971AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift */; };
+		FB82129B1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */; };
+		FB82129C1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +117,10 @@
 		FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEvent.swift; sourceTree = "<group>"; };
 		FB8212831AD232790056FC16 /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		FB8212871AD233070056FC16 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
+		FB82128B1AD2EE850056FC16 /* HabitOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitOverviewViewController.swift; sourceTree = "<group>"; };
+		FB82128E1AD2EE980056FC16 /* HabitEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEventTableViewCell.swift; sourceTree = "<group>"; };
+		FB8212971AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTimeframeAnalyzer.swift; sourceTree = "<group>"; };
+		FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTimeframeAnalysis.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				FB8212861AD232800056FC16 /* Habits */,
+				FB82128A1AD2EE6A0056FC16 /* Habit Overview */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -212,6 +225,8 @@
 			children = (
 				FB8211DB1AD211740056FC16 /* Main.storyboard */,
 				FB8211E01AD211740056FC16 /* LaunchScreen.xib */,
+				FB8212871AD233070056FC16 /* HabitTableViewCell.swift */,
+				FB82128E1AD2EE980056FC16 /* HabitEventTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -222,6 +237,8 @@
 				FB8212761AD2269C0056FC16 /* HabitTracker.xcdatamodeld */,
 				FB82127A1AD22D100056FC16 /* Habit.swift */,
 				FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */,
+				FB8212971AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift */,
+				FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -292,9 +309,16 @@
 			isa = PBXGroup;
 			children = (
 				FB8212831AD232790056FC16 /* HabitsViewController.swift */,
-				FB8212871AD233070056FC16 /* HabitTableViewCell.swift */,
 			);
 			name = Habits;
+			sourceTree = "<group>";
+		};
+		FB82128A1AD2EE6A0056FC16 /* Habit Overview */ = {
+			isa = PBXGroup;
+			children = (
+				FB82128B1AD2EE850056FC16 /* HabitOverviewViewController.swift */,
+			);
+			name = "Habit Overview";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,17 +429,21 @@
 				FB8212541AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */,
 				FB82127B1AD22D100056FC16 /* Habit.swift in Sources */,
 				FB82126C1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
+				FB8212981AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift in Sources */,
+				FB82128C1AD2EE850056FC16 /* HabitOverviewViewController.swift in Sources */,
 				FB82125A1AD225100056FC16 /* SugarRecordLogger.swift in Sources */,
 				FB82126A1AD225190056FC16 /* DefaultCDStack.swift in Sources */,
 				FB8212681AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */,
 				FB8212501AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */,
 				FB8212881AD233070056FC16 /* HabitTableViewCell.swift in Sources */,
 				FB8212581AD225100056FC16 /* SugarRecordFinder.swift in Sources */,
+				FB82128F1AD2EE980056FC16 /* HabitEventTableViewCell.swift in Sources */,
 				FB8211D81AD211740056FC16 /* AppDelegate.swift in Sources */,
 				FB8212841AD232790056FC16 /* HabitsViewController.swift in Sources */,
 				FB82127E1AD22D5E0056FC16 /* HabitEvent.swift in Sources */,
 				FB8212701AD225190056FC16 /* SugarRecordCDContext.swift in Sources */,
 				FB8212781AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
+				FB82129B1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */,
 				FB82125C1AD225100056FC16 /* SugarRecordResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,17 +459,21 @@
 				FB8212531AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */,
 				FB82126D1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
 				FB8212791AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
+				FB8212991AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift in Sources */,
+				FB82128D1AD2EE850056FC16 /* HabitOverviewViewController.swift in Sources */,
 				FB8212711AD225190056FC16 /* SugarRecordCDContext.swift in Sources */,
 				FB8212551AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */,
 				FB82126B1AD225190056FC16 /* DefaultCDStack.swift in Sources */,
 				FB8212031AD211C60056FC16 /* HackerTrackerWidgetViewController.swift in Sources */,
 				FB8212891AD233070056FC16 /* HabitTableViewCell.swift in Sources */,
 				FB8212571AD225100056FC16 /* SugarRecord.swift in Sources */,
+				FB8212901AD2EE980056FC16 /* HabitEventTableViewCell.swift in Sources */,
 				FB8212731AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */,
 				FB8212851AD232790056FC16 /* HabitsViewController.swift in Sources */,
 				FB82125D1AD225100056FC16 /* SugarRecordResults.swift in Sources */,
 				FB82127C1AD22D100056FC16 /* Habit.swift in Sources */,
 				FB82125B1AD225100056FC16 /* SugarRecordLogger.swift in Sources */,
+				FB82129C1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */,
 				FB82126F1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,6 +650,7 @@
 				FB8211F31AD211750056FC16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB8212091AD211C60056FC16 /* Build configuration list for PBXNativeTarget "HabitTrackerWidget" */ = {
 			isa = XCConfigurationList;
@@ -626,6 +659,7 @@
 				FB82120B1AD211C60056FC16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
