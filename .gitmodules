@@ -1,0 +1,3 @@
+[submodule "SugarRecord"]
+	path = SugarRecord
+	url = ./HabitTracker/SugarRecord/

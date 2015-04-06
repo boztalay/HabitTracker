@@ -14,6 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let stack: DefaultCDStack = DefaultCDStack(databaseName: "Database.sqlite", automigrating: true)
+        stack.autoSaving = true
+        SugarRecord.addStack(stack)
+        
         return true
     }
 

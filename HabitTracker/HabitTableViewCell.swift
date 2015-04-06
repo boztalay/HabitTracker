@@ -10,6 +10,11 @@ import UIKit
 
 class HabitTableViewCell: UITableViewCell {
     
+    // MARK: Outlets
+    
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var countLabel: UILabel?
+    
     // MARK: Constants
     
     class func ReuseIdentifier() -> String {

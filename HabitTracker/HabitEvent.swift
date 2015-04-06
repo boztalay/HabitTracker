@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 
 class HabitEvent: NSManagedObject {
+    
     @NSManaged var date: NSDate
     @NSManaged var numTimes: Int32
     @NSManaged var habit: Habit
