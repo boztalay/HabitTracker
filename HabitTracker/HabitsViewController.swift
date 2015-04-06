@@ -10,6 +10,10 @@ import UIKit
 
 class HabitsViewController: UIViewController, UIAlertViewDelegate {
     
+    // MARK: Constants
+    
+    let ThisToHabitOverviewSegueIdentifier = "HabitsToHabitOverview"
+    
     // MARK: Model
     
     var habits: SugarRecordResults?
@@ -116,7 +120,7 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView?.reloadData()
-                var junk = 0 // SourceKit freaks out about the above line if this isn't here
+                var junk = 0 // SourceKit freaks out about the above line if this isn't here -.-
             }
         }
     }
@@ -145,6 +149,19 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
             }
         }
     }
+    
+    // MARK: Moving to the habit overview controller
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == self.ThisToHabitOverviewSegueIdentifier {
+            let index = self.tableView?.indexPathForSelectedRow()!.row
+            let habitToShowOverviewFor = self.habits![index!] as Habit
+            
+            let tabBarController = segue.destinationViewController as UITabBarController
+            let habitOverviewController = tabBarController.viewControllers![0] as HabitOverviewViewController
+            habitOverviewController.habit = habitToShowOverviewFor
+        }
+    }
 }
 
 extension HabitsViewController: UITableViewDataSource {
@@ -165,18 +182,13 @@ extension HabitsViewController: UITableViewDataSource {
         let habitCell = tableView.dequeueReusableCellWithIdentifier(HabitTableViewCell.ReuseIdentifier()) as HabitTableViewCell
         let habit = self.habits![indexPath.row] as Habit
         
-        habitCell.nameLabel?.text = habit.name
-        habitCell.countLabel?.text = "\(habit.events.count)"
+        habitCell.setHabit(habit)
         
         return habitCell
     }
 }
 
 extension HabitsViewController: UITableViewDelegate {
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        return
-    }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {

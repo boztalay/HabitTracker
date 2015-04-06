@@ -25,31 +25,25 @@ class HabitTimeframeAnalyzer {
     // MARK: General analysis
     
     func addPendingAnalysisForTimeframe(timeframeInSeconds: Double, analysisName: String) {
-        analyses.append(HabitTimeframeAnalysis(timeframeInSeconds: 0, readableName: "hey"))
+        analyses.append(HabitTimeframeAnalysis(timeframeInSeconds: timeframeInSeconds, readableName: analysisName))
     }
     
     func runAnalysis() {
+        var analysesToRun = Array(filter(self.analyses) { $0.analysisPending })
+        
         // First calculate the dates that correspond to each analysis to run
-        for analysisToRun in self.analyses {
+        for analysisToRun in analysesToRun {
             analysisToRun.makeTimeframeDate()
         }
         
-        var analysesLeft = Array(filter(self.analyses) { $0.analysisPending })
-        
         // Now start counting events in each timeframe
+        // This could be more efficient if we could iterate backwards over habit.events
         for habitEvent in habit.events {
             if let habitEvent = habitEvent as? HabitEvent {
-                for analysis in analysesLeft {
-                    if habitEvent.date.compare(analysis.timeframeDate!) == NSComparisonResult.OrderedAscending {
+                for analysis in analysesToRun {
+                    if habitEvent.date.compare(analysis.timeframeDate!) == NSComparisonResult.OrderedDescending {
                         analysis.numEventsInTimeframe += habitEvent.numTimes
-                    } else {
-                        analysis.analysisPending = false
                     }
-                }
-            
-                analysesLeft = Array(filter(analysesLeft) { $0.analysisPending })
-                if analysesLeft.count == 0 {
-                    break
                 }
             }
         }
@@ -69,12 +63,14 @@ class HabitTimeframeAnalyzer {
     }
     
     func addLastDayAnalysis() {
-        let numSecondsInTimeframe = 24.0 * 60.0 * 60.0
+//        let numSecondsInTimeframe = 24.0 * 60.0 * 60.0
+        let numSecondsInTimeframe = 60.0
         self.addPendingAnalysisForTimeframe(numSecondsInTimeframe, analysisName: "Last Day")
     }
     
     func addLastWeekAnalysis() {
-        let numSecondsInTimeframe = 7.0 * 24.0 * 60.0 * 60.0
+//        let numSecondsInTimeframe = 7.0 * 24.0 * 60.0 * 60.0
+        let numSecondsInTimeframe = 60.0 * 60.0
         self.addPendingAnalysisForTimeframe(numSecondsInTimeframe, analysisName: "Last Week")
     }
     

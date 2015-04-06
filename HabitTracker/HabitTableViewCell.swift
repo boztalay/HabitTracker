@@ -20,4 +20,11 @@ class HabitTableViewCell: UITableViewCell {
     class func ReuseIdentifier() -> String {
         return "HabitCell"
     }
+    
+    // MARK: Setting the views for a habit
+    
+    func setHabit(habit: Habit) {
+        self.nameLabel?.text = habit.name
+        self.countLabel?.text = "\(habit.events.count)"
+    }
 }

@@ -60,6 +60,8 @@
 		FB8212991AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212971AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift */; };
 		FB82129B1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */; };
 		FB82129C1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */; };
+		FB82129E1AD310960056FC16 /* HabitAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129D1AD310960056FC16 /* HabitAnalysisTableViewCell.swift */; };
+		FB82129F1AD310960056FC16 /* HabitAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129D1AD310960056FC16 /* HabitAnalysisTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,7 @@
 		FB82128E1AD2EE980056FC16 /* HabitEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEventTableViewCell.swift; sourceTree = "<group>"; };
 		FB8212971AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTimeframeAnalyzer.swift; sourceTree = "<group>"; };
 		FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTimeframeAnalysis.swift; sourceTree = "<group>"; };
+		FB82129D1AD310960056FC16 /* HabitAnalysisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitAnalysisTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +230,7 @@
 				FB8211E01AD211740056FC16 /* LaunchScreen.xib */,
 				FB8212871AD233070056FC16 /* HabitTableViewCell.swift */,
 				FB82128E1AD2EE980056FC16 /* HabitEventTableViewCell.swift */,
+				FB82129D1AD310960056FC16 /* HabitAnalysisTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -426,6 +430,7 @@
 				FB8212721AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */,
 				FB8212521AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */,
 				FB8212561AD225100056FC16 /* SugarRecord.swift in Sources */,
+				FB82129E1AD310960056FC16 /* HabitAnalysisTableViewCell.swift in Sources */,
 				FB8212541AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */,
 				FB82127B1AD22D100056FC16 /* Habit.swift in Sources */,
 				FB82126C1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
@@ -456,6 +461,7 @@
 				FB82127F1AD22D5E0056FC16 /* HabitEvent.swift in Sources */,
 				FB8212511AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */,
 				FB8212591AD225100056FC16 /* SugarRecordFinder.swift in Sources */,
+				FB82129F1AD310960056FC16 /* HabitAnalysisTableViewCell.swift in Sources */,
 				FB8212531AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */,
 				FB82126D1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
 				FB8212791AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
