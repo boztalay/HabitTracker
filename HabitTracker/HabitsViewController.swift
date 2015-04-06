@@ -25,6 +25,8 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView?.allowsMultipleSelectionDuringEditing = false
+    
         self.fetchFirstData()
     }
     
@@ -44,7 +46,7 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
 
             dispatch_async(dispatch_get_main_queue()) {
                 self.updateTableViewVisibility()
-                self.tableView?.reloadData()
+                self.tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
             }
         }
     }
@@ -77,21 +79,21 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     // MARK: Adding a new habit
     
     @IBAction func addNewHabitButtonPressed(sender: AnyObject) {
-        var alertView = UIAlertView(title: "New Habit", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Add")
+        self.tableView?.editing = false
+        
+        let alertView = UIAlertView(title: "New Habit", message: "", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "Add")
         alertView.alertViewStyle = UIAlertViewStyle.PlainTextInput
         alertView.show()
     }
     
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
-        if buttonIndex == 1 {
-            SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-                let newHabit = Habit.create() as Habit
-                newHabit.name = alertView.textFieldAtIndex(0)!.text
-                newHabit.save()
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.fetchData()
-                }
+    func alertViewConfirmedNewHabit(alertView: UIAlertView) {
+        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
+            let newHabit = Habit.create() as Habit
+            newHabit.name = alertView.textFieldAtIndex(0)!.text
+            newHabit.save()
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.fetchData()
             }
         }
     }
@@ -115,6 +117,31 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView?.reloadData()
                 var junk = 0 // SourceKit freaks out about the above line if this isn't here
+            }
+        }
+    }
+    
+    // MARK: Deleting a habit
+    
+    var habitToDelete: Habit?
+    
+    func deleteHabitAtIndex(habitIndex: Int) {
+        habitToDelete = self.habits![habitIndex] as? Habit
+        
+        if let habitToDelete = self.habitToDelete {
+            let alertView = UIAlertView(title: "Fo Real?", message: "Really delete '\(habitToDelete.name)'?", delegate: self, cancelButtonTitle: "Nope", otherButtonTitles: "Yes")
+            alertView.show()
+        }
+    }
+    
+    func alertViewConfirmedDeleteHabit() {
+        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
+            if let habitToDelete = self.habitToDelete {
+                habitToDelete.beginWriting().delete().endWriting()
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.fetchData()
+                }
             }
         }
     }
@@ -149,5 +176,24 @@ extension HabitsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         return
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            self.deleteHabitAtIndex(indexPath.row)
+        }
+    }
+}
+
+extension HabitsViewController: UIAlertViewDelegate {
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if buttonIndex == 1 {
+            if self.tableView?.editing == true {
+                self.alertViewConfirmedDeleteHabit()
+            } else {
+                self.alertViewConfirmedNewHabit(alertView)
+            }
+        }
     }
 }
