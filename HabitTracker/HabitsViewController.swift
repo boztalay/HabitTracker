@@ -34,6 +34,14 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
         self.fetchFirstData()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let selectedIndexPath = self.tableView?.indexPathForSelectedRow() {
+            self.tableView?.deselectRowAtIndexPath(selectedIndexPath, animated: true)
+        }
+    }
+    
     // MARK: Fetching data
     
     func fetchFirstData() {
