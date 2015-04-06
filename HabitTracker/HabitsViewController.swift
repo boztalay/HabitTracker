@@ -113,7 +113,8 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
             newHabitEvent.save()
             
             dispatch_async(dispatch_get_main_queue()) {
-                self.fetchData()
+                self.tableView?.reloadData()
+                var junk = 0 // SourceKit freaks out about the above line if this isn't here
             }
         }
     }
