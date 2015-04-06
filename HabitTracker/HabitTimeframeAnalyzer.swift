@@ -63,14 +63,12 @@ class HabitTimeframeAnalyzer {
     }
     
     func addLastDayAnalysis() {
-//        let numSecondsInTimeframe = 24.0 * 60.0 * 60.0
-        let numSecondsInTimeframe = 60.0
+        let numSecondsInTimeframe = 24.0 * 60.0 * 60.0
         self.addPendingAnalysisForTimeframe(numSecondsInTimeframe, analysisName: "Last Day")
     }
     
     func addLastWeekAnalysis() {
-//        let numSecondsInTimeframe = 7.0 * 24.0 * 60.0 * 60.0
-        let numSecondsInTimeframe = 60.0 * 60.0
+        let numSecondsInTimeframe = 7.0 * 24.0 * 60.0 * 60.0
         self.addPendingAnalysisForTimeframe(numSecondsInTimeframe, analysisName: "Last Week")
     }
     

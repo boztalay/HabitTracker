@@ -24,23 +24,23 @@ class HabitOverviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = habit?.name
+        self.tabBarController?.title = habit?.name
         
         self.runHabitAnalysis()
     }
     
     func runHabitAnalysis() {
-//        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
+        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
             if let habit = self.habit {
                 self.habitAnalyzer = HabitTimeframeAnalyzer(habit: habit)
                 self.habitAnalyzer?.addAndRunAllAnalyses()
                 
-//                dispatch_async(dispatch_get_main_queue()) {
+                dispatch_async(dispatch_get_main_queue()) {
                     self.tableView?.reloadData()
                     var junk = 0 // SourceKit freaks out about the above line if this isn't here -.-
-//                }
+                }
             }
-//        }
+        }
     }
 }
 
