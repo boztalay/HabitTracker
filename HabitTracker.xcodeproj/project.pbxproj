@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB8211D81AD211740056FC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8211D71AD211740056FC16 /* AppDelegate.swift */; };
+		FB8211DD1AD211740056FC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8211DB1AD211740056FC16 /* Main.storyboard */; };
+		FB8211DF1AD211740056FC16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8211DE1AD211740056FC16 /* Images.xcassets */; };
+		FB8211E21AD211740056FC16 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8211E01AD211740056FC16 /* LaunchScreen.xib */; };
+		FB8211FE1AD211C60056FC16 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8211FD1AD211C60056FC16 /* NotificationCenter.framework */; };
+		FB8212031AD211C60056FC16 /* HackerTrackerWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212021AD211C60056FC16 /* HackerTrackerWidgetViewController.swift */; };
+		FB8212051AD211C60056FC16 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8212041AD211C60056FC16 /* MainInterface.storyboard */; };
+		FB8212081AD211C60056FC16 /* HabitTrackerWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB8211FB1AD211C60056FC16 /* HabitTrackerWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FB8212451AD223580056FC16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8212441AD223580056FC16 /* CoreData.framework */; };
+		FB8212501AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212491AD225100056FC16 /* SugarRecordContextProtocol.swift */; };
+		FB8212511AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212491AD225100056FC16 /* SugarRecordContextProtocol.swift */; };
+		FB8212521AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124A1AD225100056FC16 /* SugarRecordResultsProtocol.swift */; };
+		FB8212531AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124A1AD225100056FC16 /* SugarRecordResultsProtocol.swift */; };
+		FB8212541AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124B1AD225100056FC16 /* SugarRecordStackProtocol.swift */; };
+		FB8212551AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124B1AD225100056FC16 /* SugarRecordStackProtocol.swift */; };
+		FB8212561AD225100056FC16 /* SugarRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124C1AD225100056FC16 /* SugarRecord.swift */; };
+		FB8212571AD225100056FC16 /* SugarRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124C1AD225100056FC16 /* SugarRecord.swift */; };
+		FB8212581AD225100056FC16 /* SugarRecordFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124D1AD225100056FC16 /* SugarRecordFinder.swift */; };
+		FB8212591AD225100056FC16 /* SugarRecordFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124D1AD225100056FC16 /* SugarRecordFinder.swift */; };
+		FB82125A1AD225100056FC16 /* SugarRecordLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124E1AD225100056FC16 /* SugarRecordLogger.swift */; };
+		FB82125B1AD225100056FC16 /* SugarRecordLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124E1AD225100056FC16 /* SugarRecordLogger.swift */; };
+		FB82125C1AD225100056FC16 /* SugarRecordResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124F1AD225100056FC16 /* SugarRecordResults.swift */; };
+		FB82125D1AD225100056FC16 /* SugarRecordResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124F1AD225100056FC16 /* SugarRecordResults.swift */; };
+		FB8212681AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212601AD225190056FC16 /* CDArray+SugarRecordResults.swift */; };
+		FB8212691AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212601AD225190056FC16 /* CDArray+SugarRecordResults.swift */; };
+		FB82126A1AD225190056FC16 /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212611AD225190056FC16 /* DefaultCDStack.swift */; };
+		FB82126B1AD225190056FC16 /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212611AD225190056FC16 /* DefaultCDStack.swift */; };
+		FB82126C1AD225190056FC16 /* iCloudCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212621AD225190056FC16 /* iCloudCDStack.swift */; };
+		FB82126D1AD225190056FC16 /* iCloudCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212621AD225190056FC16 /* iCloudCDStack.swift */; };
+		FB82126E1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212631AD225190056FC16 /* NSManagedObject+SugarRecord.swift */; };
+		FB82126F1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212631AD225190056FC16 /* NSManagedObject+SugarRecord.swift */; };
+		FB8212701AD225190056FC16 /* SugarRecordCDContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212641AD225190056FC16 /* SugarRecordCDContext.swift */; };
+		FB8212711AD225190056FC16 /* SugarRecordCDContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212641AD225190056FC16 /* SugarRecordCDContext.swift */; };
+		FB8212721AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212651AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift */; };
+		FB8212731AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212651AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift */; };
+		FB8212781AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB8212761AD2269C0056FC16 /* HabitTracker.xcdatamodeld */; };
+		FB8212791AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB8212761AD2269C0056FC16 /* HabitTracker.xcdatamodeld */; };
+		FB82127B1AD22D100056FC16 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82127A1AD22D100056FC16 /* Habit.swift */; };
+		FB82127C1AD22D100056FC16 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82127A1AD22D100056FC16 /* Habit.swift */; };
+		FB82127E1AD22D5E0056FC16 /* HabitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */; };
+		FB82127F1AD22D5E0056FC16 /* HabitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */; };
+		FB8212841AD232790056FC16 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212831AD232790056FC16 /* HabitsViewController.swift */; };
+		FB8212851AD232790056FC16 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212831AD232790056FC16 /* HabitsViewController.swift */; };
+		FB8212881AD233070056FC16 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212871AD233070056FC16 /* HabitTableViewCell.swift */; };
+		FB8212891AD233070056FC16 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212871AD233070056FC16 /* HabitTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB8212061AD211C60056FC16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB8211CA1AD211740056FC16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB8211FA1AD211C60056FC16;
+			remoteInfo = HabitTrackerWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB82120C1AD211C60056FC16 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FB8212081AD211C60056FC16 /* HabitTrackerWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FB8211D21AD211740056FC16 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8211D61AD211740056FC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB8211D71AD211740056FC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB8211DC1AD211740056FC16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB8211DE1AD211740056FC16 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FB8211E11AD211740056FC16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FB8211FB1AD211C60056FC16 /* HabitTrackerWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HabitTrackerWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8211FD1AD211C60056FC16 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		FB8212011AD211C60056FC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB8212021AD211C60056FC16 /* HackerTrackerWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerTrackerWidgetViewController.swift; sourceTree = "<group>"; };
+		FB8212041AD211C60056FC16 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		FB8212441AD223580056FC16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FB8212491AD225100056FC16 /* SugarRecordContextProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordContextProtocol.swift; sourceTree = "<group>"; };
+		FB82124A1AD225100056FC16 /* SugarRecordResultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordResultsProtocol.swift; sourceTree = "<group>"; };
+		FB82124B1AD225100056FC16 /* SugarRecordStackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordStackProtocol.swift; sourceTree = "<group>"; };
+		FB82124C1AD225100056FC16 /* SugarRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecord.swift; sourceTree = "<group>"; };
+		FB82124D1AD225100056FC16 /* SugarRecordFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordFinder.swift; sourceTree = "<group>"; };
+		FB82124E1AD225100056FC16 /* SugarRecordLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordLogger.swift; sourceTree = "<group>"; };
+		FB82124F1AD225100056FC16 /* SugarRecordResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordResults.swift; sourceTree = "<group>"; };
+		FB8212601AD225190056FC16 /* CDArray+SugarRecordResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDArray+SugarRecordResults.swift"; sourceTree = "<group>"; };
+		FB8212611AD225190056FC16 /* DefaultCDStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCDStack.swift; sourceTree = "<group>"; };
+		FB8212621AD225190056FC16 /* iCloudCDStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCloudCDStack.swift; sourceTree = "<group>"; };
+		FB8212631AD225190056FC16 /* NSManagedObject+SugarRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+SugarRecord.swift"; sourceTree = "<group>"; };
+		FB8212641AD225190056FC16 /* SugarRecordCDContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordCDContext.swift; sourceTree = "<group>"; };
+		FB8212651AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SugarRecordFinder+FetchedResultsController.swift"; sourceTree = "<group>"; };
+		FB8212771AD2269C0056FC16 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
+		FB82127A1AD22D100056FC16 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEvent.swift; sourceTree = "<group>"; };
+		FB8212831AD232790056FC16 /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		FB8212871AD233070056FC16 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB8211CF1AD211740056FC16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8212451AD223580056FC16 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8211F81AD211C60056FC16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8211FE1AD211C60056FC16 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB8211C91AD211740056FC16 = {
+			isa = PBXGroup;
+			children = (
+				FB8211D41AD211740056FC16 /* HabitTracker */,
+				FB8211FF1AD211C60056FC16 /* HabitTrackerWidget */,
+				FB8211FC1AD211C60056FC16 /* Frameworks */,
+				FB8211D31AD211740056FC16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB8211D31AD211740056FC16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB8211D21AD211740056FC16 /* HabitTracker.app */,
+				FB8211FB1AD211C60056FC16 /* HabitTrackerWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB8211D41AD211740056FC16 /* HabitTracker */ = {
+			isa = PBXGroup;
+			children = (
+				FB8211D71AD211740056FC16 /* AppDelegate.swift */,
+				FB82120F1AD219150056FC16 /* Model */,
+				FB82120E1AD219040056FC16 /* View */,
+				FB82120D1AD218F40056FC16 /* Controller */,
+				FB8212121AD2227A0056FC16 /* Frameworks */,
+				FB8211DE1AD211740056FC16 /* Images.xcassets */,
+				FB8211D51AD211740056FC16 /* Supporting Files */,
+			);
+			path = HabitTracker;
+			sourceTree = "<group>";
+		};
+		FB8211D51AD211740056FC16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB8211D61AD211740056FC16 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB8211FC1AD211C60056FC16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212441AD223580056FC16 /* CoreData.framework */,
+				FB8211FD1AD211C60056FC16 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB8211FF1AD211C60056FC16 /* HabitTrackerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212021AD211C60056FC16 /* HackerTrackerWidgetViewController.swift */,
+				FB8212041AD211C60056FC16 /* MainInterface.storyboard */,
+				FB8212001AD211C60056FC16 /* Supporting Files */,
+			);
+			path = HabitTrackerWidget;
+			sourceTree = "<group>";
+		};
+		FB8212001AD211C60056FC16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212011AD211C60056FC16 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB82120D1AD218F40056FC16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212861AD232800056FC16 /* Habits */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		FB82120E1AD219040056FC16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB8211DB1AD211740056FC16 /* Main.storyboard */,
+				FB8211E01AD211740056FC16 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		FB82120F1AD219150056FC16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212761AD2269C0056FC16 /* HabitTracker.xcdatamodeld */,
+				FB82127A1AD22D100056FC16 /* Habit.swift */,
+				FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FB8212121AD2227A0056FC16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212461AD224FE0056FC16 /* SugarRecord */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB8212461AD224FE0056FC16 /* SugarRecord */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212471AD225100056FC16 /* Core */,
+				FB82125E1AD225190056FC16 /* CoreData */,
+			);
+			name = SugarRecord;
+			sourceTree = "<group>";
+		};
+		FB8212471AD225100056FC16 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212481AD225100056FC16 /* Protocols */,
+				FB82124C1AD225100056FC16 /* SugarRecord.swift */,
+				FB82124D1AD225100056FC16 /* SugarRecordFinder.swift */,
+				FB82124E1AD225100056FC16 /* SugarRecordLogger.swift */,
+				FB82124F1AD225100056FC16 /* SugarRecordResults.swift */,
+			);
+			name = Core;
+			path = SugarRecord/library/Core;
+			sourceTree = "<group>";
+		};
+		FB8212481AD225100056FC16 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212491AD225100056FC16 /* SugarRecordContextProtocol.swift */,
+				FB82124A1AD225100056FC16 /* SugarRecordResultsProtocol.swift */,
+				FB82124B1AD225100056FC16 /* SugarRecordStackProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FB82125E1AD225190056FC16 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FB82125F1AD225190056FC16 /* Base */,
+			);
+			name = CoreData;
+			path = SugarRecord/library/CoreData;
+			sourceTree = "<group>";
+		};
+		FB82125F1AD225190056FC16 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212601AD225190056FC16 /* CDArray+SugarRecordResults.swift */,
+				FB8212611AD225190056FC16 /* DefaultCDStack.swift */,
+				FB8212621AD225190056FC16 /* iCloudCDStack.swift */,
+				FB8212631AD225190056FC16 /* NSManagedObject+SugarRecord.swift */,
+				FB8212641AD225190056FC16 /* SugarRecordCDContext.swift */,
+				FB8212651AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FB8212861AD232800056FC16 /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				FB8212831AD232790056FC16 /* HabitsViewController.swift */,
+				FB8212871AD233070056FC16 /* HabitTableViewCell.swift */,
+			);
+			name = Habits;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB8211D11AD211740056FC16 /* HabitTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB8211F11AD211750056FC16 /* Build configuration list for PBXNativeTarget "HabitTracker" */;
+			buildPhases = (
+				FB8211CE1AD211740056FC16 /* Sources */,
+				FB8211CF1AD211740056FC16 /* Frameworks */,
+				FB8211D01AD211740056FC16 /* Resources */,
+				FB82120C1AD211C60056FC16 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB8212071AD211C60056FC16 /* PBXTargetDependency */,
+			);
+			name = HabitTracker;
+			productName = HabitTracker;
+			productReference = FB8211D21AD211740056FC16 /* HabitTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB8211FA1AD211C60056FC16 /* HabitTrackerWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB8212091AD211C60056FC16 /* Build configuration list for PBXNativeTarget "HabitTrackerWidget" */;
+			buildPhases = (
+				FB8211F71AD211C60056FC16 /* Sources */,
+				FB8211F81AD211C60056FC16 /* Frameworks */,
+				FB8211F91AD211C60056FC16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HabitTrackerWidget;
+			productName = HabitTrackerWidget;
+			productReference = FB8211FB1AD211C60056FC16 /* HabitTrackerWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB8211CA1AD211740056FC16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Ben Oztalay";
+				TargetAttributes = {
+					FB8211D11AD211740056FC16 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					FB8211FA1AD211C60056FC16 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+				};
+			};
+			buildConfigurationList = FB8211CD1AD211740056FC16 /* Build configuration list for PBXProject "HabitTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB8211C91AD211740056FC16;
+			productRefGroup = FB8211D31AD211740056FC16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB8211D11AD211740056FC16 /* HabitTracker */,
+				FB8211FA1AD211C60056FC16 /* HabitTrackerWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB8211D01AD211740056FC16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8211DD1AD211740056FC16 /* Main.storyboard in Resources */,
+				FB8211E21AD211740056FC16 /* LaunchScreen.xib in Resources */,
+				FB8211DF1AD211740056FC16 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8211F91AD211C60056FC16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8212051AD211C60056FC16 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB8211CE1AD211740056FC16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB82126E1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */,
+				FB8212721AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */,
+				FB8212521AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */,
+				FB8212561AD225100056FC16 /* SugarRecord.swift in Sources */,
+				FB8212541AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */,
+				FB82127B1AD22D100056FC16 /* Habit.swift in Sources */,
+				FB82126C1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
+				FB82125A1AD225100056FC16 /* SugarRecordLogger.swift in Sources */,
+				FB82126A1AD225190056FC16 /* DefaultCDStack.swift in Sources */,
+				FB8212681AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */,
+				FB8212501AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */,
+				FB8212881AD233070056FC16 /* HabitTableViewCell.swift in Sources */,
+				FB8212581AD225100056FC16 /* SugarRecordFinder.swift in Sources */,
+				FB8211D81AD211740056FC16 /* AppDelegate.swift in Sources */,
+				FB8212841AD232790056FC16 /* HabitsViewController.swift in Sources */,
+				FB82127E1AD22D5E0056FC16 /* HabitEvent.swift in Sources */,
+				FB8212701AD225190056FC16 /* SugarRecordCDContext.swift in Sources */,
+				FB8212781AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
+				FB82125C1AD225100056FC16 /* SugarRecordResults.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8211F71AD211C60056FC16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8212691AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */,
+				FB82127F1AD22D5E0056FC16 /* HabitEvent.swift in Sources */,
+				FB8212511AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */,
+				FB8212591AD225100056FC16 /* SugarRecordFinder.swift in Sources */,
+				FB8212531AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */,
+				FB82126D1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
+				FB8212791AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
+				FB8212711AD225190056FC16 /* SugarRecordCDContext.swift in Sources */,
+				FB8212551AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */,
+				FB82126B1AD225190056FC16 /* DefaultCDStack.swift in Sources */,
+				FB8212031AD211C60056FC16 /* HackerTrackerWidgetViewController.swift in Sources */,
+				FB8212891AD233070056FC16 /* HabitTableViewCell.swift in Sources */,
+				FB8212571AD225100056FC16 /* SugarRecord.swift in Sources */,
+				FB8212731AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */,
+				FB8212851AD232790056FC16 /* HabitsViewController.swift in Sources */,
+				FB82125D1AD225100056FC16 /* SugarRecordResults.swift in Sources */,
+				FB82127C1AD22D100056FC16 /* Habit.swift in Sources */,
+				FB82125B1AD225100056FC16 /* SugarRecordLogger.swift in Sources */,
+				FB82126F1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB8212071AD211C60056FC16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB8211FA1AD211C60056FC16 /* HabitTrackerWidget */;
+			targetProxy = FB8212061AD211C60056FC16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB8211DB1AD211740056FC16 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB8211DC1AD211740056FC16 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB8211E01AD211740056FC16 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB8211E11AD211740056FC16 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB8211EF1AD211750056FC16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB8211F01AD211750056FC16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB8211F21AD211750056FC16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = HabitTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB8211F31AD211750056FC16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = HabitTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FB82120A1AD211C60056FC16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HabitTrackerWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FB82120B1AD211C60056FC16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = HabitTrackerWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB8211CD1AD211740056FC16 /* Build configuration list for PBXProject "HabitTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB8211EF1AD211750056FC16 /* Debug */,
+				FB8211F01AD211750056FC16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB8211F11AD211750056FC16 /* Build configuration list for PBXNativeTarget "HabitTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB8211F21AD211750056FC16 /* Debug */,
+				FB8211F31AD211750056FC16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB8212091AD211C60056FC16 /* Build configuration list for PBXNativeTarget "HabitTrackerWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB82120A1AD211C60056FC16 /* Debug */,
+				FB82120B1AD211C60056FC16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FB8212761AD2269C0056FC16 /* HabitTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FB8212771AD2269C0056FC16 /* HabitTracker.xcdatamodel */,
+			);
+			currentVersion = FB8212771AD2269C0056FC16 /* HabitTracker.xcdatamodel */;
+			path = HabitTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FB8211CA1AD211740056FC16 /* Project object */;
+}
