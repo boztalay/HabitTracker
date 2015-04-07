@@ -37,14 +37,17 @@ class HabitTimeframeAnalyzer {
         }
         
         // Now start counting events in each timeframe
-        // This could be more efficient if we could iterate backwards over habit.events
-        for habitEvent in habit.events {
+        for habitEvent in reverse(habit.events.array) {
             if let habitEvent = habitEvent as? HabitEvent {
                 for analysis in analysesToRun {
                     if habitEvent.date.compare(analysis.timeframeDate!) == NSComparisonResult.OrderedDescending {
                         analysis.numEventsInTimeframe += habitEvent.numTimes
+                    } else {
+                        analysis.analysisPending = false
                     }
                 }
+                
+                analysesToRun = Array(filter(self.analyses) { $0.analysisPending })
             }
         }
     }

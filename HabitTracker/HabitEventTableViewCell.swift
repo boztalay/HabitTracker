@@ -20,4 +20,10 @@ class HabitEventTableViewCell: UITableViewCell {
     class func ReuseIdentifier() -> String {
         return "HabitEventCell"
     }
+    
+    // MARK: Setting the habit event
+    
+    func setHabitEvent(habitEvent: HabitEvent) {
+        
+    }
 }

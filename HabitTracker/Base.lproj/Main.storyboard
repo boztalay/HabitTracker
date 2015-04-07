@@ -44,12 +44,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QEB-NM-4cf" id="VH6-je-Hvd">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsV-vB-TKk">
-                                                    <rect key="frame" x="495" y="0.0" width="64" height="43"/>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsV-vB-TKk">
+                                                    <rect key="frame" x="507" y="2" width="52" height="42"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="64" id="Qha-sI-XjL"/>
+                                                        <constraint firstAttribute="width" constant="52" id="Qha-sI-XjL"/>
                                                     </constraints>
-                                                    <state key="normal" title="Occurred">
+                                                    <state key="normal" title="Did It">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -57,41 +57,33 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="999999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4X-fF-RlI">
-                                                    <rect key="frame" x="414" y="11" width="69" height="21"/>
+                                                    <rect key="frame" x="415" y="12" width="80" height="20"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="69" id="csH-Sn-I3O"/>
+                                                        <constraint firstAttribute="width" constant="80" id="csH-Sn-I3O"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClP-0e-6SS">
-                                                    <rect key="frame" x="15" y="11" width="391" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClP-0e-6SS">
+                                                    <rect key="frame" x="15" y="12" width="392" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="UsV-vB-TKk" firstAttribute="top" secondItem="VH6-je-Hvd" secondAttribute="top" id="26k-QQ-LSr"/>
+                                                <constraint firstItem="UsV-vB-TKk" firstAttribute="top" secondItem="VH6-je-Hvd" secondAttribute="top" constant="1" id="26k-QQ-LSr"/>
                                                 <constraint firstItem="UsV-vB-TKk" firstAttribute="leading" secondItem="t4X-fF-RlI" secondAttribute="trailing" constant="12" id="6iF-qn-Que"/>
                                                 <constraint firstItem="ClP-0e-6SS" firstAttribute="top" secondItem="VH6-je-Hvd" secondAttribute="top" constant="11" id="8Je-XF-Wm1"/>
                                                 <constraint firstAttribute="trailing" secondItem="UsV-vB-TKk" secondAttribute="trailing" constant="8" id="Gjz-hQ-bvA"/>
-                                                <constraint firstItem="t4X-fF-RlI" firstAttribute="top" secondItem="VH6-je-Hvd" secondAttribute="top" constant="11" id="HSo-s5-vim"/>
-                                                <constraint firstAttribute="bottom" secondItem="UsV-vB-TKk" secondAttribute="bottom" constant="6" id="U6o-qd-esc"/>
-                                                <constraint firstItem="UsV-vB-TKk" firstAttribute="top" secondItem="VH6-je-Hvd" secondAttribute="top" constant="7" id="UlQ-Yo-Skv"/>
+                                                <constraint firstItem="t4X-fF-RlI" firstAttribute="top" secondItem="VH6-je-Hvd" secondAttribute="top" constant="12" id="HSo-s5-vim"/>
                                                 <constraint firstAttribute="bottom" secondItem="UsV-vB-TKk" secondAttribute="bottom" id="Yn7-4I-Tcs"/>
                                                 <constraint firstAttribute="bottom" secondItem="t4X-fF-RlI" secondAttribute="bottom" constant="11" id="cua-Jf-izv"/>
                                                 <constraint firstItem="ClP-0e-6SS" firstAttribute="leading" secondItem="VH6-je-Hvd" secondAttribute="leading" constant="15" id="mVt-qd-TMf"/>
                                                 <constraint firstItem="t4X-fF-RlI" firstAttribute="leading" secondItem="ClP-0e-6SS" secondAttribute="trailing" constant="8" id="vs5-3g-B4H"/>
                                                 <constraint firstAttribute="bottom" secondItem="ClP-0e-6SS" secondAttribute="bottom" constant="11" id="zzy-h8-kBE"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="U6o-qd-esc"/>
-                                                    <exclude reference="UlQ-Yo-Skv"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="countLabel" destination="t4X-fF-RlI" id="rGT-66-IY9"/>
@@ -133,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mez-aL-2Y9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="453" y="611"/>
+            <point key="canvasLocation" x="453" y="609"/>
         </scene>
         <!--Overview-->
         <scene sceneID="kTm-ie-C8U">
