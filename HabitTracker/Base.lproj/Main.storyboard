@@ -195,7 +195,9 @@
                             <constraint firstAttribute="trailing" secondItem="foh-jw-0me" secondAttribute="trailing" id="tsM-Sy-xwU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Overview" id="Cll-RF-qWP"/>
+                    <tabBarItem key="tabBarItem" title="Overview" image="ChartIcon" id="Cll-RF-qWP">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-1"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="tableView" destination="foh-jw-0me" id="mrj-n1-2u4"/>
                     </connections>
@@ -284,7 +286,9 @@
                             <constraint firstAttribute="bottom" secondItem="jcl-67-LoZ" secondAttribute="bottom" id="zhu-Va-vet"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Details" id="paX-Mk-caD"/>
+                    <tabBarItem key="tabBarItem" title="Details" image="ListIcon" id="paX-Mk-caD">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-1"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -332,4 +336,8 @@
             <point key="canvasLocation" x="-312" y="612"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ChartIcon" width="27" height="27"/>
+        <image name="ListIcon" width="27" height="27"/>
+    </resources>
 </document>
