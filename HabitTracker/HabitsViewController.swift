@@ -8,6 +8,19 @@
 
 import UIKit
 
+//class HabitDetailsViewController : UIViewController {
+//
+//    override init() {
+//        super.init()
+//    }
+//
+//    required init(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    var habit : Habit = Habit()
+//
+//}
+
 class HabitsViewController: UIViewController, UIAlertViewDelegate {
     
     // MARK: Constants
@@ -30,7 +43,7 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
         super.viewDidLoad()
         
         self.tableView?.allowsMultipleSelectionDuringEditing = false
-    
+        
         self.fetchFirstData()
     }
     
@@ -55,7 +68,7 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     func fetchData() {
         SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
             self.habits = Habit.all().sorted(by: "name", ascending: true).find()
-
+            
             dispatch_async(dispatch_get_main_queue()) {
                 self.updateTableViewVisibility()
                 self.tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
@@ -158,7 +171,7 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
         }
     }
     
-    // MARK: Moving to the habit overview controller
+    // MARK: Moving to the habit overview controllers
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == self.ThisToHabitOverviewSegueIdentifier {
@@ -167,7 +180,10 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
             
             let tabBarController = segue.destinationViewController as UITabBarController
             let habitOverviewController = tabBarController.viewControllers![0] as HabitOverviewViewController
+            let habitDetailsController = tabBarController.viewControllers![1] as HabitDetailsViewController
+            
             habitOverviewController.habit = habitToShowOverviewFor
+            habitDetailsController.habit = habitToShowOverviewFor
         }
     }
 }

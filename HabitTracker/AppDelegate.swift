@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         stack.autoSaving = true
         SugarRecord.addStack(stack)
         
+        let x = HabitDetailsViewController()
         return true
     }
 

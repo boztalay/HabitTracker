@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB2B9D461AD45668005BC683 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2B9D451AD45668005BC683 /* HabitDetailsViewController.swift */; };
 		FB8211D81AD211740056FC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8211D71AD211740056FC16 /* AppDelegate.swift */; };
 		FB8211DD1AD211740056FC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8211DB1AD211740056FC16 /* Main.storyboard */; };
 		FB8211DF1AD211740056FC16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8211DE1AD211740056FC16 /* Images.xcassets */; };
@@ -49,8 +48,6 @@
 		FB82127C1AD22D100056FC16 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82127A1AD22D100056FC16 /* Habit.swift */; };
 		FB82127E1AD22D5E0056FC16 /* HabitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */; };
 		FB82127F1AD22D5E0056FC16 /* HabitEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */; };
-		FB8212841AD232790056FC16 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212831AD232790056FC16 /* HabitsViewController.swift */; };
-		FB8212851AD232790056FC16 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212831AD232790056FC16 /* HabitsViewController.swift */; };
 		FB8212881AD233070056FC16 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212871AD233070056FC16 /* HabitTableViewCell.swift */; };
 		FB8212891AD233070056FC16 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212871AD233070056FC16 /* HabitTableViewCell.swift */; };
 		FB82128C1AD2EE850056FC16 /* HabitOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82128B1AD2EE850056FC16 /* HabitOverviewViewController.swift */; };
@@ -63,6 +60,8 @@
 		FB82129C1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */; };
 		FB82129E1AD310960056FC16 /* HabitAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129D1AD310960056FC16 /* HabitAnalysisTableViewCell.swift */; };
 		FB82129F1AD310960056FC16 /* HabitAnalysisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82129D1AD310960056FC16 /* HabitAnalysisTableViewCell.swift */; };
+		FBC598871AD4D7DD00C1FEB7 /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2B9D481AD45FBF005BC683 /* HabitDetailsViewController.swift */; };
+		FBC598891AD4D87500C1FEB7 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC598881AD4D87500C1FEB7 /* HabitsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FB2B9D451AD45668005BC683 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
+		FB2B9D481AD45FBF005BC683 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
 		FB8211D21AD211740056FC16 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8211D61AD211740056FC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB8211D71AD211740056FC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,13 +118,13 @@
 		FB8212771AD2269C0056FC16 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
 		FB82127A1AD22D100056FC16 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEvent.swift; sourceTree = "<group>"; };
-		FB8212831AD232790056FC16 /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		FB8212871AD233070056FC16 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		FB82128B1AD2EE850056FC16 /* HabitOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitOverviewViewController.swift; sourceTree = "<group>"; };
 		FB82128E1AD2EE980056FC16 /* HabitEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEventTableViewCell.swift; sourceTree = "<group>"; };
 		FB8212971AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTimeframeAnalyzer.swift; sourceTree = "<group>"; };
 		FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitTimeframeAnalysis.swift; sourceTree = "<group>"; };
 		FB82129D1AD310960056FC16 /* HabitAnalysisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitAnalysisTableViewCell.swift; sourceTree = "<group>"; };
+		FBC598881AD4D87500C1FEB7 /* HabitsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +150,7 @@
 		FB2B9D441AD45635005BC683 /* Habit Details */ = {
 			isa = PBXGroup;
 			children = (
-				FB2B9D451AD45668005BC683 /* HabitDetailsViewController.swift */,
+				FB2B9D481AD45FBF005BC683 /* HabitDetailsViewController.swift */,
 			);
 			name = "Habit Details";
 			sourceTree = "<group>";
@@ -323,7 +322,7 @@
 		FB8212861AD232800056FC16 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
-				FB8212831AD232790056FC16 /* HabitsViewController.swift */,
+				FBC598881AD4D87500C1FEB7 /* HabitsViewController.swift */,
 			);
 			name = Habits;
 			sourceTree = "<group>";
@@ -437,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBC598871AD4D7DD00C1FEB7 /* HabitDetailsViewController.swift in Sources */,
 				FB82126E1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */,
 				FB8212721AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */,
 				FB8212521AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */,
@@ -447,6 +447,7 @@
 				FB82126C1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
 				FB8212981AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift in Sources */,
 				FB82128C1AD2EE850056FC16 /* HabitOverviewViewController.swift in Sources */,
+				FBC598891AD4D87500C1FEB7 /* HabitsViewController.swift in Sources */,
 				FB82125A1AD225100056FC16 /* SugarRecordLogger.swift in Sources */,
 				FB82126A1AD225190056FC16 /* DefaultCDStack.swift in Sources */,
 				FB8212681AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */,
@@ -455,8 +456,6 @@
 				FB8212581AD225100056FC16 /* SugarRecordFinder.swift in Sources */,
 				FB82128F1AD2EE980056FC16 /* HabitEventTableViewCell.swift in Sources */,
 				FB8211D81AD211740056FC16 /* AppDelegate.swift in Sources */,
-				FB2B9D461AD45668005BC683 /* HabitDetailsViewController.swift in Sources */,
-				FB8212841AD232790056FC16 /* HabitsViewController.swift in Sources */,
 				FB82127E1AD22D5E0056FC16 /* HabitEvent.swift in Sources */,
 				FB8212701AD225190056FC16 /* SugarRecordCDContext.swift in Sources */,
 				FB8212781AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
@@ -487,7 +486,6 @@
 				FB8212571AD225100056FC16 /* SugarRecord.swift in Sources */,
 				FB8212901AD2EE980056FC16 /* HabitEventTableViewCell.swift in Sources */,
 				FB8212731AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */,
-				FB8212851AD232790056FC16 /* HabitsViewController.swift in Sources */,
 				FB82125D1AD225100056FC16 /* SugarRecordResults.swift in Sources */,
 				FB82127C1AD22D100056FC16 /* Habit.swift in Sources */,
 				FB82125B1AD225100056FC16 /* SugarRecordLogger.swift in Sources */,

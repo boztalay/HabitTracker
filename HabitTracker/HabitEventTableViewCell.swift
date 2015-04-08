@@ -24,6 +24,7 @@ class HabitEventTableViewCell: UITableViewCell {
     // MARK: Setting the habit event
     
     func setHabitEvent(habitEvent: HabitEvent) {
-        
+        self.dateLabel?.text = "\(habitEvent.date)"
+        self.numTimesLabel?.text = "\(habitEvent.numTimes)"
     }
 }

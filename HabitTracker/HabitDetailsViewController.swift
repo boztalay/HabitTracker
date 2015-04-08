@@ -23,12 +23,59 @@ class HabitDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView?.allowsMultipleSelectionDuringEditing = false
 
-        // Do any additional setup after loading the view.
+        self.updateTableViewVisibility()
+    }
+    
+    // MARK: Displaying different views based on the state of the habit
+    
+    func updateTableViewVisibility() {
+        if let habit = self.habit {
+            if habit.events.count > 0 {
+                self.showTableView()
+                return
+            }
+        }
+        
+        self.showNoDataLabel()
+    }
+    
+    func showTableView() {
+        self.tableView?.hidden = false
+        self.noDataLabel?.hidden = true
+    }
+    
+    func showNoDataLabel() {
+        self.tableView?.hidden = true
+        self.noDataLabel?.hidden = false
+    }
+    
+    // MARK: Adding a new habit event
+    
+    @IBAction func addNewHabitButtonPressed(sender: AnyObject) {
+        self.tableView?.editing = false
+        
+        // TODO bring up the new habit event screen
+    }
+    
+    // MARK: Removing habit events
+    
+    func deleteHabitEvent(habitEvent: HabitEvent) {
+        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
+            habitEvent.beginWriting().delete().endWriting()
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.updateTableViewVisibility()
+                self.tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+            }
+        }
     }
 }
 
 extension HabitDetailsViewController: UITableViewDataSource {
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -43,7 +90,7 @@ extension HabitDetailsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let habitEventCell = tableView.dequeueReusableCellWithIdentifier(HabitEventTableViewCell.ReuseIdentifier()) as HabitEventTableViewCell
-        let habitEvent = habit?.events[indexPath.row] as HabitEvent
+        let habitEvent = habit?.events[habit!.events.count - indexPath.row - 1] as HabitEvent
         
         habitEventCell.setHabitEvent(habitEvent)
         
@@ -53,4 +100,10 @@ extension HabitDetailsViewController: UITableViewDataSource {
 
 extension HabitDetailsViewController: UITableViewDelegate {
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let habitEventToDelete = self.habit!.events[indexPath.row] as HabitEvent
+            self.deleteHabitEvent(habitEventToDelete)
+        }
+    }
 }
