@@ -8,19 +8,6 @@
 
 import UIKit
 
-//class HabitDetailsViewController : UIViewController {
-//
-//    override init() {
-//        super.init()
-//    }
-//
-//    required init(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    var habit : Habit = Habit()
-//
-//}
-
 class HabitsViewController: UIViewController, UIAlertViewDelegate {
     
     // MARK: Constants
@@ -62,16 +49,22 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
         self.noHabitsLabel?.hidden = true
         self.loadingIndicator?.startAnimating()
         
-        self.fetchData()
+        self.fetchDataAndReloadTableView()
     }
     
-    func fetchData() {
+    func fetchDataAndReloadTableView() {
+        self.fetchDataWithCompletion() {
+            self.updateTableViewVisibility()
+            self.tableView?.reloadData()
+        }
+    }
+    
+    func fetchDataWithCompletion(atCompletion: () -> ()) {
         SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
             self.habits = Habit.all().sorted(by: "name", ascending: true).find()
             
             dispatch_async(dispatch_get_main_queue()) {
-                self.updateTableViewVisibility()
-                self.tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+                atCompletion()
             }
         }
     }
@@ -118,8 +111,29 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
             newHabit.save()
             
             dispatch_async(dispatch_get_main_queue()) {
-                self.fetchData()
+                self.fetchDataWithCompletion() {
+                    let indexOfNewHabit = self.findIndexOfHabitNamed(newHabit.name)
+                    let indexPathOfNewHabit = NSIndexPath(forRow: indexOfNewHabit, inSection: 0)
+                    self.tableView?.insertRowsAtIndexPaths([indexPathOfNewHabit], withRowAnimation: .Automatic)
+                }
             }
+        }
+    }
+    
+    func findIndexOfHabitNamed(habitName: String) -> Int {
+        return self.findIndexOfHabitNamed(habitName, testIndex: self.habits!.count / 2)
+    }
+    
+    func findIndexOfHabitNamed(habitName: String, testIndex: Int) -> Int {
+        let habitAtTestIndex = self.habits![testIndex] as Habit
+        if habitName == habitAtTestIndex.name {
+            return testIndex
+        } else if habitName > habitAtTestIndex.name {
+            let newTestIndex = testIndex + ((self.habits!.count - testIndex) / 2)
+            return self.findIndexOfHabitNamed(habitName, testIndex: newTestIndex)
+        } else {
+            let newTestIndex = testIndex / 2
+            return self.findIndexOfHabitNamed(habitName, testIndex: newTestIndex)
         }
     }
     
@@ -148,24 +162,25 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     
     // MARK: Deleting a habit
     
-    var habitToDelete: Habit?
+    var indexPathOfHabitToDelete: NSIndexPath?
     
-    func deleteHabitAtIndex(habitIndex: Int) {
-        habitToDelete = self.habits![habitIndex] as? Habit
+    func deleteHabitAtIndexPath(habitIndexPath: NSIndexPath) {
+        self.indexPathOfHabitToDelete = habitIndexPath
+        let habitToDelete = self.habits?[habitIndexPath.row] as Habit
         
-        if let habitToDelete = self.habitToDelete {
-            let alertView = UIAlertView(title: "Fo Real?", message: "Really delete '\(habitToDelete.name)'?", delegate: self, cancelButtonTitle: "Nope", otherButtonTitles: "Yes")
-            alertView.show()
-        }
+        let alertView = UIAlertView(title: "Fo Real?", message: "Really delete '\(habitToDelete.name)'?", delegate: self, cancelButtonTitle: "Nope", otherButtonTitles: "Yes")
+        alertView.show()
     }
     
     func alertViewConfirmedDeleteHabit() {
         SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-            if let habitToDelete = self.habitToDelete {
-                habitToDelete.beginWriting().delete().endWriting()
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.fetchData()
+            let habitToDelete = self.habits?[self.indexPathOfHabitToDelete!.row] as Habit
+            habitToDelete.beginWriting().delete().endWriting()
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.fetchDataWithCompletion() {
+                    self.tableView?.deleteRowsAtIndexPaths([self.indexPathOfHabitToDelete!], withRowAnimation: .Automatic)
+                    var junk = 0 // Ugh
                 }
             }
         }
@@ -216,7 +231,7 @@ extension HabitsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            self.deleteHabitAtIndex(indexPath.row)
+            self.deleteHabitAtIndexPath(indexPath)
         }
     }
 }

@@ -62,15 +62,23 @@ class HabitDetailsViewController: UIViewController {
     
     // MARK: Removing habit events
     
-    func deleteHabitEvent(habitEvent: HabitEvent) {
+    func deleteHabitEventAtIndexPath(indexPath: NSIndexPath) {
+        let habitEventToDelete = self.getHabitEventAtReversedIndex(indexPath.row)
+        
         SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-            habitEvent.beginWriting().delete().endWriting()
+            habitEventToDelete.beginWriting().delete().endWriting()
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.updateTableViewVisibility()
-                self.tableView?.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
+                self.tableView?.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
         }
+    }
+    
+    // MARK: Helper function
+    
+    func getHabitEventAtReversedIndex(index: Int) -> HabitEvent {
+        return habit?.events[habit!.events.count - index - 1] as HabitEvent
     }
 }
 
@@ -90,7 +98,7 @@ extension HabitDetailsViewController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let habitEventCell = tableView.dequeueReusableCellWithIdentifier(HabitEventTableViewCell.ReuseIdentifier()) as HabitEventTableViewCell
-        let habitEvent = habit?.events[habit!.events.count - indexPath.row - 1] as HabitEvent
+        let habitEvent = self.getHabitEventAtReversedIndex(indexPath.row)
         
         habitEventCell.setHabitEvent(habitEvent)
         
@@ -102,8 +110,7 @@ extension HabitDetailsViewController: UITableViewDelegate {
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            let habitEventToDelete = self.habit!.events[indexPath.row] as HabitEvent
-            self.deleteHabitEvent(habitEventToDelete)
+            self.deleteHabitEventAtIndexPath(indexPath)
         }
     }
 }
