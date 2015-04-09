@@ -29,6 +29,12 @@ class HabitOverviewViewController: UIViewController {
         self.runHabitAnalysis()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
+    }
+    
     func runHabitAnalysis() {
         SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
             if let habit = self.habit {
@@ -37,7 +43,6 @@ class HabitOverviewViewController: UIViewController {
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView?.reloadData()
-                    var junk = 0 // SourceKit freaks out about the above line if this isn't here -.-
                 }
             }
         }
@@ -58,7 +63,7 @@ extension HabitOverviewViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let habitAnalysisCell = tableView.dequeueReusableCellWithIdentifier(HabitAnalysisTableViewCell.ReuseIdentifier()) as HabitAnalysisTableViewCell
+        let habitAnalysisCell = tableView.dequeueReusableCellWithIdentifier(HabitAnalysisTableViewCell.ReuseIdentifier()) as! HabitAnalysisTableViewCell
         let habitAnalysis = self.habitAnalyzer!.analyses[indexPath.row]
         
         habitAnalysisCell.setHabitAnalysis(habitAnalysis)

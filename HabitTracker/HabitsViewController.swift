@@ -106,7 +106,7 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     
     func alertViewConfirmedNewHabit(alertView: UIAlertView) {
         SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-            let newHabit = Habit.create() as Habit
+            let newHabit = Habit.create() as! Habit
             newHabit.name = alertView.textFieldAtIndex(0)!.text
             newHabit.save()
             
@@ -125,7 +125,7 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     }
     
     func findIndexOfHabitNamed(habitName: String, testIndex: Int) -> Int {
-        let habitAtTestIndex = self.habits![testIndex] as Habit
+        let habitAtTestIndex = self.habits![testIndex] as! Habit
         if habitName == habitAtTestIndex.name {
             return testIndex
         } else if habitName > habitAtTestIndex.name {
@@ -140,14 +140,14 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     // MARK: Tracking another occurance of an existing habit
     
     @IBAction func trackButtonPressed(sender: AnyObject) {
-        let trackButton = sender as UIButton
+        let trackButton = sender as! UIButton
         
         let centerOfButtonRelativeToTableView = trackButton.convertPoint(CGPointZero, toView: self.tableView!)
         let indexPathOfRowPressed = self.tableView?.indexPathForRowAtPoint(centerOfButtonRelativeToTableView)
-        let habit = self.habits![indexPathOfRowPressed!.row] as Habit
+        let habit = self.habits![indexPathOfRowPressed!.row] as! Habit
         
         SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-            let newHabitEvent = HabitEvent.create() as HabitEvent
+            let newHabitEvent = HabitEvent.create() as! HabitEvent
             newHabitEvent.numTimes = 1
             newHabitEvent.date = NSDate()
             newHabitEvent.habit = habit
@@ -155,7 +155,6 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView?.reloadData()
-                var junk = 0 // SourceKit freaks out about the above line if this isn't here -.-
             }
         }
     }
@@ -166,7 +165,7 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     
     func deleteHabitAtIndexPath(habitIndexPath: NSIndexPath) {
         self.indexPathOfHabitToDelete = habitIndexPath
-        let habitToDelete = self.habits?[habitIndexPath.row] as Habit
+        let habitToDelete = self.habits?[habitIndexPath.row] as! Habit
         
         let alertView = UIAlertView(title: "Fo Real?", message: "Really delete '\(habitToDelete.name)'?", delegate: self, cancelButtonTitle: "Nope", otherButtonTitles: "Yes")
         alertView.show()
@@ -174,13 +173,12 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     
     func alertViewConfirmedDeleteHabit() {
         SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-            let habitToDelete = self.habits?[self.indexPathOfHabitToDelete!.row] as Habit
+            let habitToDelete = self.habits?[self.indexPathOfHabitToDelete!.row] as! Habit
             habitToDelete.beginWriting().delete().endWriting()
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.fetchDataWithCompletion() {
                     self.tableView?.deleteRowsAtIndexPaths([self.indexPathOfHabitToDelete!], withRowAnimation: .Automatic)
-                    var junk = 0 // Ugh
                 }
             }
         }
@@ -191,11 +189,11 @@ class HabitsViewController: UIViewController, UIAlertViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == self.ThisToHabitOverviewSegueIdentifier {
             let index = self.tableView?.indexPathForSelectedRow()!.row
-            let habitToShowOverviewFor = self.habits![index!] as Habit
+            let habitToShowOverviewFor = self.habits![index!] as! Habit
             
-            let tabBarController = segue.destinationViewController as UITabBarController
-            let habitOverviewController = tabBarController.viewControllers![0] as HabitOverviewViewController
-            let habitDetailsController = tabBarController.viewControllers![1] as HabitDetailsViewController
+            let tabBarController = segue.destinationViewController as! UITabBarController
+            let habitOverviewController = tabBarController.viewControllers![0] as! HabitOverviewViewController
+            let habitDetailsController = tabBarController.viewControllers![1] as! HabitDetailsViewController
             
             habitOverviewController.habit = habitToShowOverviewFor
             habitDetailsController.habit = habitToShowOverviewFor
@@ -218,8 +216,8 @@ extension HabitsViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let habitCell = tableView.dequeueReusableCellWithIdentifier(HabitTableViewCell.ReuseIdentifier()) as HabitTableViewCell
-        let habit = self.habits![indexPath.row] as Habit
+        let habitCell = tableView.dequeueReusableCellWithIdentifier(HabitTableViewCell.ReuseIdentifier()) as! HabitTableViewCell
+        let habit = self.habits![indexPath.row] as! Habit
         
         habitCell.setHabit(habit)
         

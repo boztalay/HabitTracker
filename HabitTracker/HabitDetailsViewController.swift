@@ -10,9 +10,14 @@ import UIKit
 
 class HabitDetailsViewController: UIViewController {
     
+    // MARK: Constants
+    
+    let ThisToNewHabitEventSegueIdentifier = "DetailsToNewHabitEvent"
+    
     // MARK: Model
     
     var habit: Habit?
+    var sortedHabitEvents: [HabitEvent]?
     
     // MARK: Outlets
     
@@ -27,6 +32,12 @@ class HabitDetailsViewController: UIViewController {
         self.tableView?.allowsMultipleSelectionDuringEditing = false
 
         self.updateTableViewVisibility()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addNewHabitButtonPressed"))
     }
     
     // MARK: Displaying different views based on the state of the habit
@@ -54,10 +65,19 @@ class HabitDetailsViewController: UIViewController {
     
     // MARK: Adding a new habit event
     
-    @IBAction func addNewHabitButtonPressed(sender: AnyObject) {
+    func addNewHabitButtonPressed() {
         self.tableView?.editing = false
         
-        // TODO bring up the new habit event screen
+        self.performSegueWithIdentifier(self.ThisToNewHabitEventSegueIdentifier, sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == self.ThisToNewHabitEventSegueIdentifier {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let newHabitEventController = navigationController.viewControllers.first as! NewHabitEventViewController
+            
+            newHabitEventController.habit = self.habit
+        }
     }
     
     // MARK: Removing habit events
@@ -78,7 +98,7 @@ class HabitDetailsViewController: UIViewController {
     // MARK: Helper function
     
     func getHabitEventAtReversedIndex(index: Int) -> HabitEvent {
-        return habit?.events[habit!.events.count - index - 1] as HabitEvent
+        return habit?.events[habit!.events.count - index - 1] as! HabitEvent
     }
 }
 
@@ -89,15 +109,15 @@ extension HabitDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let habit = self.habit {
-            return habit.events.count
+        if let sortedHabitEvents = self.sortedHabitEvents {
+            return sortedHabitEvents.count
         } else {
             return 0
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let habitEventCell = tableView.dequeueReusableCellWithIdentifier(HabitEventTableViewCell.ReuseIdentifier()) as HabitEventTableViewCell
+        let habitEventCell = tableView.dequeueReusableCellWithIdentifier(HabitEventTableViewCell.ReuseIdentifier()) as! HabitEventTableViewCell
         let habitEvent = self.getHabitEventAtReversedIndex(indexPath.row)
         
         habitEventCell.setHabitEvent(habitEvent)

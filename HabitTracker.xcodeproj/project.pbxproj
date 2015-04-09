@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB6CE9B51AD5B263007CA8C7 /* NewHabitEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6CE9B41AD5B263007CA8C7 /* NewHabitEventViewController.swift */; };
 		FB8211D81AD211740056FC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8211D71AD211740056FC16 /* AppDelegate.swift */; };
 		FB8211DD1AD211740056FC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8211DB1AD211740056FC16 /* Main.storyboard */; };
 		FB8211DF1AD211740056FC16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8211DE1AD211740056FC16 /* Images.xcassets */; };
@@ -90,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		FB2B9D481AD45FBF005BC683 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
+		FB6CE9B41AD5B263007CA8C7 /* NewHabitEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewHabitEventViewController.swift; sourceTree = "<group>"; };
 		FB8211D21AD211740056FC16 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8211D61AD211740056FC16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB8211D71AD211740056FC16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				FB8212861AD232800056FC16 /* Habits */,
 				FB82128A1AD2EE6A0056FC16 /* Habit Overview */,
 				FB2B9D441AD45635005BC683 /* Habit Details */,
+				FBC5988A1AD5A7B100C1FEB7 /* New Habit Event */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -333,6 +336,14 @@
 				FB82128B1AD2EE850056FC16 /* HabitOverviewViewController.swift */,
 			);
 			name = "Habit Overview";
+			sourceTree = "<group>";
+		};
+		FBC5988A1AD5A7B100C1FEB7 /* New Habit Event */ = {
+			isa = PBXGroup;
+			children = (
+				FB6CE9B41AD5B263007CA8C7 /* NewHabitEventViewController.swift */,
+			);
+			name = "New Habit Event";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,6 +471,7 @@
 				FB8212701AD225190056FC16 /* SugarRecordCDContext.swift in Sources */,
 				FB8212781AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
 				FB82129B1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */,
+				FB6CE9B51AD5B263007CA8C7 /* NewHabitEventViewController.swift in Sources */,
 				FB82125C1AD225100056FC16 /* SugarRecordResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
