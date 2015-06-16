@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0427261AD756E4004CE4AC /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0427251AD756E4004CE4AC /* PersistenceController.swift */; };
 		FB6CE9B51AD5B263007CA8C7 /* NewHabitEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6CE9B41AD5B263007CA8C7 /* NewHabitEventViewController.swift */; };
 		FB8211D81AD211740056FC16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8211D71AD211740056FC16 /* AppDelegate.swift */; };
 		FB8211DD1AD211740056FC16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8211DB1AD211740056FC16 /* Main.storyboard */; };
@@ -17,32 +18,6 @@
 		FB8212051AD211C60056FC16 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8212041AD211C60056FC16 /* MainInterface.storyboard */; };
 		FB8212081AD211C60056FC16 /* HabitTrackerWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FB8211FB1AD211C60056FC16 /* HabitTrackerWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FB8212451AD223580056FC16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8212441AD223580056FC16 /* CoreData.framework */; };
-		FB8212501AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212491AD225100056FC16 /* SugarRecordContextProtocol.swift */; };
-		FB8212511AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212491AD225100056FC16 /* SugarRecordContextProtocol.swift */; };
-		FB8212521AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124A1AD225100056FC16 /* SugarRecordResultsProtocol.swift */; };
-		FB8212531AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124A1AD225100056FC16 /* SugarRecordResultsProtocol.swift */; };
-		FB8212541AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124B1AD225100056FC16 /* SugarRecordStackProtocol.swift */; };
-		FB8212551AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124B1AD225100056FC16 /* SugarRecordStackProtocol.swift */; };
-		FB8212561AD225100056FC16 /* SugarRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124C1AD225100056FC16 /* SugarRecord.swift */; };
-		FB8212571AD225100056FC16 /* SugarRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124C1AD225100056FC16 /* SugarRecord.swift */; };
-		FB8212581AD225100056FC16 /* SugarRecordFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124D1AD225100056FC16 /* SugarRecordFinder.swift */; };
-		FB8212591AD225100056FC16 /* SugarRecordFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124D1AD225100056FC16 /* SugarRecordFinder.swift */; };
-		FB82125A1AD225100056FC16 /* SugarRecordLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124E1AD225100056FC16 /* SugarRecordLogger.swift */; };
-		FB82125B1AD225100056FC16 /* SugarRecordLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124E1AD225100056FC16 /* SugarRecordLogger.swift */; };
-		FB82125C1AD225100056FC16 /* SugarRecordResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124F1AD225100056FC16 /* SugarRecordResults.swift */; };
-		FB82125D1AD225100056FC16 /* SugarRecordResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82124F1AD225100056FC16 /* SugarRecordResults.swift */; };
-		FB8212681AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212601AD225190056FC16 /* CDArray+SugarRecordResults.swift */; };
-		FB8212691AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212601AD225190056FC16 /* CDArray+SugarRecordResults.swift */; };
-		FB82126A1AD225190056FC16 /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212611AD225190056FC16 /* DefaultCDStack.swift */; };
-		FB82126B1AD225190056FC16 /* DefaultCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212611AD225190056FC16 /* DefaultCDStack.swift */; };
-		FB82126C1AD225190056FC16 /* iCloudCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212621AD225190056FC16 /* iCloudCDStack.swift */; };
-		FB82126D1AD225190056FC16 /* iCloudCDStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212621AD225190056FC16 /* iCloudCDStack.swift */; };
-		FB82126E1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212631AD225190056FC16 /* NSManagedObject+SugarRecord.swift */; };
-		FB82126F1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212631AD225190056FC16 /* NSManagedObject+SugarRecord.swift */; };
-		FB8212701AD225190056FC16 /* SugarRecordCDContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212641AD225190056FC16 /* SugarRecordCDContext.swift */; };
-		FB8212711AD225190056FC16 /* SugarRecordCDContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212641AD225190056FC16 /* SugarRecordCDContext.swift */; };
-		FB8212721AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212651AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift */; };
-		FB8212731AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8212651AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift */; };
 		FB8212781AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB8212761AD2269C0056FC16 /* HabitTracker.xcdatamodeld */; };
 		FB8212791AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB8212761AD2269C0056FC16 /* HabitTracker.xcdatamodeld */; };
 		FB82127B1AD22D100056FC16 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB82127A1AD22D100056FC16 /* Habit.swift */; };
@@ -90,6 +65,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB0427251AD756E4004CE4AC /* PersistenceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		FB2B9D481AD45FBF005BC683 /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = "<group>"; };
 		FB6CE9B41AD5B263007CA8C7 /* NewHabitEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewHabitEventViewController.swift; sourceTree = "<group>"; };
 		FB8211D21AD211740056FC16 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,19 +80,6 @@
 		FB8212021AD211C60056FC16 /* HackerTrackerWidgetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerTrackerWidgetViewController.swift; sourceTree = "<group>"; };
 		FB8212041AD211C60056FC16 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		FB8212441AD223580056FC16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		FB8212491AD225100056FC16 /* SugarRecordContextProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordContextProtocol.swift; sourceTree = "<group>"; };
-		FB82124A1AD225100056FC16 /* SugarRecordResultsProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordResultsProtocol.swift; sourceTree = "<group>"; };
-		FB82124B1AD225100056FC16 /* SugarRecordStackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordStackProtocol.swift; sourceTree = "<group>"; };
-		FB82124C1AD225100056FC16 /* SugarRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecord.swift; sourceTree = "<group>"; };
-		FB82124D1AD225100056FC16 /* SugarRecordFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordFinder.swift; sourceTree = "<group>"; };
-		FB82124E1AD225100056FC16 /* SugarRecordLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordLogger.swift; sourceTree = "<group>"; };
-		FB82124F1AD225100056FC16 /* SugarRecordResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordResults.swift; sourceTree = "<group>"; };
-		FB8212601AD225190056FC16 /* CDArray+SugarRecordResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CDArray+SugarRecordResults.swift"; sourceTree = "<group>"; };
-		FB8212611AD225190056FC16 /* DefaultCDStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCDStack.swift; sourceTree = "<group>"; };
-		FB8212621AD225190056FC16 /* iCloudCDStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iCloudCDStack.swift; sourceTree = "<group>"; };
-		FB8212631AD225190056FC16 /* NSManagedObject+SugarRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+SugarRecord.swift"; sourceTree = "<group>"; };
-		FB8212641AD225190056FC16 /* SugarRecordCDContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SugarRecordCDContext.swift; sourceTree = "<group>"; };
-		FB8212651AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SugarRecordFinder+FetchedResultsController.swift"; sourceTree = "<group>"; };
 		FB8212771AD2269C0056FC16 /* HabitTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitTracker.xcdatamodel; sourceTree = "<group>"; };
 		FB82127A1AD22D100056FC16 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitEvent.swift; sourceTree = "<group>"; };
@@ -149,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB0427241AD756CC004CE4AC /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				FB0427251AD756E4004CE4AC /* PersistenceController.swift */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
 		FB2B9D441AD45635005BC683 /* Habit Details */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +154,6 @@
 				FB82120F1AD219150056FC16 /* Model */,
 				FB82120E1AD219040056FC16 /* View */,
 				FB82120D1AD218F40056FC16 /* Controller */,
-				FB8212121AD2227A0056FC16 /* Frameworks */,
 				FB8211DE1AD211740056FC16 /* Images.xcassets */,
 				FB8211D51AD211740056FC16 /* Supporting Files */,
 			);
@@ -251,6 +221,7 @@
 		FB82120F1AD219150056FC16 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB0427241AD756CC004CE4AC /* Persistence */,
 				FB8212761AD2269C0056FC16 /* HabitTracker.xcdatamodeld */,
 				FB82127A1AD22D100056FC16 /* Habit.swift */,
 				FB82127D1AD22D5E0056FC16 /* HabitEvent.swift */,
@@ -258,68 +229,6 @@
 				FB82129A1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		FB8212121AD2227A0056FC16 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FB8212461AD224FE0056FC16 /* SugarRecord */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FB8212461AD224FE0056FC16 /* SugarRecord */ = {
-			isa = PBXGroup;
-			children = (
-				FB8212471AD225100056FC16 /* Core */,
-				FB82125E1AD225190056FC16 /* CoreData */,
-			);
-			name = SugarRecord;
-			sourceTree = "<group>";
-		};
-		FB8212471AD225100056FC16 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				FB8212481AD225100056FC16 /* Protocols */,
-				FB82124C1AD225100056FC16 /* SugarRecord.swift */,
-				FB82124D1AD225100056FC16 /* SugarRecordFinder.swift */,
-				FB82124E1AD225100056FC16 /* SugarRecordLogger.swift */,
-				FB82124F1AD225100056FC16 /* SugarRecordResults.swift */,
-			);
-			name = Core;
-			path = SugarRecord/library/Core;
-			sourceTree = "<group>";
-		};
-		FB8212481AD225100056FC16 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				FB8212491AD225100056FC16 /* SugarRecordContextProtocol.swift */,
-				FB82124A1AD225100056FC16 /* SugarRecordResultsProtocol.swift */,
-				FB82124B1AD225100056FC16 /* SugarRecordStackProtocol.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		FB82125E1AD225190056FC16 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				FB82125F1AD225190056FC16 /* Base */,
-			);
-			name = CoreData;
-			path = SugarRecord/library/CoreData;
-			sourceTree = "<group>";
-		};
-		FB82125F1AD225190056FC16 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				FB8212601AD225190056FC16 /* CDArray+SugarRecordResults.swift */,
-				FB8212611AD225190056FC16 /* DefaultCDStack.swift */,
-				FB8212621AD225190056FC16 /* iCloudCDStack.swift */,
-				FB8212631AD225190056FC16 /* NSManagedObject+SugarRecord.swift */,
-				FB8212641AD225190056FC16 /* SugarRecordCDContext.swift */,
-				FB8212651AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift */,
-			);
-			path = Base;
 			sourceTree = "<group>";
 		};
 		FB8212861AD232800056FC16 /* Habits */ = {
@@ -448,31 +357,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBC598871AD4D7DD00C1FEB7 /* HabitDetailsViewController.swift in Sources */,
-				FB82126E1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */,
-				FB8212721AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */,
-				FB8212521AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */,
-				FB8212561AD225100056FC16 /* SugarRecord.swift in Sources */,
 				FB82129E1AD310960056FC16 /* HabitAnalysisTableViewCell.swift in Sources */,
-				FB8212541AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */,
 				FB82127B1AD22D100056FC16 /* Habit.swift in Sources */,
-				FB82126C1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
+				FB0427261AD756E4004CE4AC /* PersistenceController.swift in Sources */,
 				FB8212981AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift in Sources */,
 				FB82128C1AD2EE850056FC16 /* HabitOverviewViewController.swift in Sources */,
 				FBC598891AD4D87500C1FEB7 /* HabitsViewController.swift in Sources */,
-				FB82125A1AD225100056FC16 /* SugarRecordLogger.swift in Sources */,
-				FB82126A1AD225190056FC16 /* DefaultCDStack.swift in Sources */,
-				FB8212681AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */,
-				FB8212501AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */,
 				FB8212881AD233070056FC16 /* HabitTableViewCell.swift in Sources */,
-				FB8212581AD225100056FC16 /* SugarRecordFinder.swift in Sources */,
 				FB82128F1AD2EE980056FC16 /* HabitEventTableViewCell.swift in Sources */,
 				FB8211D81AD211740056FC16 /* AppDelegate.swift in Sources */,
 				FB82127E1AD22D5E0056FC16 /* HabitEvent.swift in Sources */,
-				FB8212701AD225190056FC16 /* SugarRecordCDContext.swift in Sources */,
 				FB8212781AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
 				FB82129B1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */,
 				FB6CE9B51AD5B263007CA8C7 /* NewHabitEventViewController.swift in Sources */,
-				FB82125C1AD225100056FC16 /* SugarRecordResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,29 +377,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB8212691AD225190056FC16 /* CDArray+SugarRecordResults.swift in Sources */,
 				FB82127F1AD22D5E0056FC16 /* HabitEvent.swift in Sources */,
-				FB8212511AD225100056FC16 /* SugarRecordContextProtocol.swift in Sources */,
-				FB8212591AD225100056FC16 /* SugarRecordFinder.swift in Sources */,
 				FB82129F1AD310960056FC16 /* HabitAnalysisTableViewCell.swift in Sources */,
-				FB8212531AD225100056FC16 /* SugarRecordResultsProtocol.swift in Sources */,
-				FB82126D1AD225190056FC16 /* iCloudCDStack.swift in Sources */,
 				FB8212791AD2269C0056FC16 /* HabitTracker.xcdatamodeld in Sources */,
 				FB8212991AD2FD8B0056FC16 /* HabitTimeframeAnalyzer.swift in Sources */,
 				FB82128D1AD2EE850056FC16 /* HabitOverviewViewController.swift in Sources */,
-				FB8212711AD225190056FC16 /* SugarRecordCDContext.swift in Sources */,
-				FB8212551AD225100056FC16 /* SugarRecordStackProtocol.swift in Sources */,
-				FB82126B1AD225190056FC16 /* DefaultCDStack.swift in Sources */,
 				FB8212031AD211C60056FC16 /* HackerTrackerWidgetViewController.swift in Sources */,
 				FB8212891AD233070056FC16 /* HabitTableViewCell.swift in Sources */,
-				FB8212571AD225100056FC16 /* SugarRecord.swift in Sources */,
 				FB8212901AD2EE980056FC16 /* HabitEventTableViewCell.swift in Sources */,
-				FB8212731AD225190056FC16 /* SugarRecordFinder+FetchedResultsController.swift in Sources */,
-				FB82125D1AD225100056FC16 /* SugarRecordResults.swift in Sources */,
 				FB82127C1AD22D100056FC16 /* Habit.swift in Sources */,
-				FB82125B1AD225100056FC16 /* SugarRecordLogger.swift in Sources */,
 				FB82129C1AD2FDC00056FC16 /* HabitTimeframeAnalysis.swift in Sources */,
-				FB82126F1AD225190056FC16 /* NSManagedObject+SugarRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

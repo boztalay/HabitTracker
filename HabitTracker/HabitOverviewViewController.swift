@@ -36,16 +36,16 @@ class HabitOverviewViewController: UIViewController {
     }
     
     func runHabitAnalysis() {
-        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-            if let habit = self.habit {
-                self.habitAnalyzer = HabitTimeframeAnalyzer(habit: habit)
-                self.habitAnalyzer?.addAndRunAllAnalyses()
-                
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.tableView?.reloadData()
-                }
-            }
-        }
+//        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
+//            if let habit = self.habit {
+//                self.habitAnalyzer = HabitTimeframeAnalyzer(habit: habit)
+//                self.habitAnalyzer?.addAndRunAllAnalyses()
+//                
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    self.tableView?.reloadData()
+//                }
+//            }
+//        }
     }
 }
 

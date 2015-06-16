@@ -12,26 +12,30 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var persistenceController: PersistenceController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let stack: DefaultCDStack = DefaultCDStack(databaseName: "Database.sqlite", automigrating: true)
-        stack.autoSaving = true
-        SugarRecord.addStack(stack)
+        self.persistenceController = PersistenceController() {
+            println("Persistence controller initialized")
+            
+            let rootViewController = self.window?.rootViewController as! UINavigationController
+            let habitsViewController = rootViewController.viewControllers.first as! HabitsViewController
+            habitsViewController.managedObjectContext = self.persistenceController?.managedObjectContext
+        }
         
-        let x = HabitDetailsViewController()
         return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
-        SugarRecord.applicationWillResignActive()
+        self.persistenceController?.save()
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
-        SugarRecord.applicationWillEnterForeground()
+        self.persistenceController?.save()
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        SugarRecord.applicationWillTerminate()
+        self.persistenceController?.save()
     }
 }
 

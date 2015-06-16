@@ -85,14 +85,14 @@ class HabitDetailsViewController: UIViewController {
     func deleteHabitEventAtIndexPath(indexPath: NSIndexPath) {
         let habitEventToDelete = self.getHabitEventAtReversedIndex(indexPath.row)
         
-        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-            habitEventToDelete.beginWriting().delete().endWriting()
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                self.updateTableViewVisibility()
-                self.tableView?.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            }
-        }
+//        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
+//            habitEventToDelete.beginWriting().delete().endWriting()
+//            
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.updateTableViewVisibility()
+//                self.tableView?.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+//            }
+//        }
     }
     
     // MARK: Helper function

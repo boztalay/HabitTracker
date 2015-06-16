@@ -43,19 +43,19 @@ class NewHabitEventViewController: UITableViewController {
     }
     
     func createHabitEventWithDate(date: NSDate, numTimes: Int) {
-        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
-            if let habit = self.habit {
-                let newHabitEvent = HabitEvent.create() as! HabitEvent
-                newHabitEvent.date = date
-                newHabitEvent.numTimes = Int32(numTimes)
-                newHabitEvent.habit = habit
-                newHabitEvent.save()
-            }
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                self.dismissSelf()
-            }
-        }
+//        SugarRecord.operation(inBackground: true, stackType: .SugarRecordEngineCoreData) { (context) -> () in
+//            if let habit = self.habit {
+//                let newHabitEvent = HabitEvent.create() as! HabitEvent
+//                newHabitEvent.date = date
+//                newHabitEvent.numTimes = Int32(numTimes)
+//                newHabitEvent.habit = habit
+//                newHabitEvent.save()
+//            }
+//            
+//            dispatch_async(dispatch_get_main_queue()) {
+//                self.dismissSelf()
+//            }
+//        }
     }
     
     func showBadDateAlertView() {

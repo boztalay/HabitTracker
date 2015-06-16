@@ -13,4 +13,5 @@ class Habit: NSManagedObject {
     
     @NSManaged var name: String
     @NSManaged var events: NSOrderedSet
+
 }
